@@ -24,7 +24,7 @@ public class Cloud1Controller {
     @GetMapping("/getoneplus")
     public String getoneplus() {
         String one = "111";
-        String two = restTemplate.getForObject("http://localhost:8082/gettwo", String.class);
+        String two = restTemplate.getForObject("http://test2/gettwo", String.class);
         return one + two;
     }
 

@@ -11,6 +11,7 @@
     <modules>
         <module>CloudTest1</module>
         <module>CloudTest2</module>
+        <module>eureka-server</module>
     </modules>
 
     <properties>

@@ -1,0 +1,10 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: eurekaserver
+#注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8888/eureka # 有可能有多个eureka作集群，这里有可能用逗号隔开，有多个eureka地址
