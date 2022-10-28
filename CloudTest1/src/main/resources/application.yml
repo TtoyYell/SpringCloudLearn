@@ -7,3 +7,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:8888/eureka/
+test2: # 调用test2服务时，使用RandomRule规则
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
