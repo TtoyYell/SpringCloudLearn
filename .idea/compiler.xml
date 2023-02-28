@@ -8,15 +8,22 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="CloudTest1" />
+        <module name="NacosTest" />
         <module name="CloudTest2" />
         <module name="eureka-server" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="CloudTest2 (1)" target="1.8" />
+      <module name="NacosLearn" target="8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="CloudTest1" options="-parameters" />
       <module name="CloudTest2" options="-parameters" />
+      <module name="NacosLearn" options="-parameters" />
+      <module name="NacosTest" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
     </option>
   </component>
