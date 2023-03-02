@@ -1,13 +1,12 @@
 server:
   port: 8085
 spring:
-  application:
-    name: test3
   cloud:
     nacos:
-      server-addr: localhost:8848
       discovery:
         cluster-name: JS #集群名称，江苏  负载均衡默认是轮询，不区分集群
+        #namespace: 111 #命名空间id，用来做环境隔离
+        ephemeral: false # false表示不是临时实例，临时实例挂了注册中心不会保留，不是临时实例的话，注册中心会保留
 
 test4: # 调用test4服务时，使用NacosRule规则,优先本地集群，然后随机选择服务
   ribbon:

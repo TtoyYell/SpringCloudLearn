@@ -10,3 +10,13 @@ eureka:
 test2: # 调用test2服务时，使用RandomRule规则
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+feign:
+  client:
+    config:
+      default: #default是指对所有服务生效
+        loggerLevel: FULL #日志级别
+  #      test2: #只对test2生效
+  #        loggerLevel: FULL #日志级别
+  httpclient:
+    enabled: true

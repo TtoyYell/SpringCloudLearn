@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: test3
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      config:
+        file-extension: yaml
+server:
+  servlet:
+    context-path: /test3
