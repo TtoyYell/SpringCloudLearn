@@ -14,7 +14,42 @@ spring:
     password: admin
     virtual-host: /itcast
 
+  datasource:
+    # 如果导入druid的starter，datasource下就可以用druid:
+    username: root
+    password: y@cp3winer
+    url: jdbc:mysql://47.100.60.104:3306/shiroDb?serverTimezone=UTC&characterEncoding=utf-8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    # 合并多个DruidDataSource的监控数据
+    useGlobalDataSourceStat: true
+    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+      #配置监控统计拦截的filters，
+      #stat：监控统计、
+    #log4j：日志记录、
+    #wall：防御sql注入
+    #如果允许报错，java.lang.ClassNotFoundException: org.apache.Log4j.Properity
+    #则导入log4j 依赖就行
+    filters: stat,wall,log4j
+
 test4: # 调用test4服务时，使用NacosRule规则,优先本地集群，然后随机选择服务
   ribbon:
     NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
     #如果该服务访问其他服务也会有限访问江苏的集群内的服务
+
+shiro:
+  loginUrl: /login.html
