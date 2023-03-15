@@ -2,6 +2,9 @@ server:
   port: 8085
 spring:
   cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:9999
     nacos:
       discovery:
         cluster-name: JS #集群名称，江苏  负载均衡默认是轮询，不区分集群
